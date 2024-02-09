@@ -1,7 +1,7 @@
 package com.jrstudio.mecwor.services;
 
-import com.jrstudio.mecwor.entities.Customer;
 import com.jrstudio.mecwor.entities.Product;
+import com.jrstudio.mecwor.entities.Tyre;
 import com.jrstudio.mecwor.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,13 +20,16 @@ public class ProductService {
     public List<Product> productList() {
         return productRepository.findAll();
     }
-    public Optional<Product> getOneById (Long id) {
+    public Optional<Product> getOneById(Long id) {
         return productRepository.findById(id);
     }
-    public Optional<Product> getOneByPrice (double price) {
+    public Optional<Tyre> getOneByBrand(String brand) {
+        return productRepository.findByBrand(brand);
+    }
+    public Optional<Product> getOneByPrice(float price) {
         return productRepository.findByPrice(price);
     }
-    public Optional<Product> getByName (String nameProduct) {
+    public Optional<Product> getByName(String nameProduct) {
         return productRepository.findByNameProduct(nameProduct);
     }
 
@@ -39,6 +42,8 @@ public class ProductService {
     public boolean existsById(long id) {
         return productRepository.existsById(id);
     }
+    public boolean existsByBrand(String brand) { return productRepository.existsByBrand(brand); }
+    public boolean existsByPrice(float price) { return productRepository.existsByPrice(price); }
     public boolean existsByName(String nameProduct) {
         return productRepository.existsByNameProduct(nameProduct);
     }

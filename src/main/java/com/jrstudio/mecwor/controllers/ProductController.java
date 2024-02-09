@@ -2,7 +2,6 @@ package com.jrstudio.mecwor.controllers;
 
 import com.jrstudio.mecwor.dto.Message;
 import com.jrstudio.mecwor.dto.ProductDTO;
-import com.jrstudio.mecwor.entities.Customer;
 import com.jrstudio.mecwor.entities.Product;
 import com.jrstudio.mecwor.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +38,12 @@ public class ProductController {
     public ResponseEntity<?> create(@RequestBody ProductDTO productDTO/*, @AuthenticationPrincipal UserDetails userDetails*/) {
         if (productDTO.getNameProduct() == null)
             return new ResponseEntity(new Message("Name is mandatory"), HttpStatus.BAD_REQUEST);
+        if (productDTO.getBrand() == null)
+            return new ResponseEntity(new Message("Brand is mandatory"), HttpStatus.BAD_REQUEST);
         if (productDTO.getPrice() <= 0)
             return new ResponseEntity(new Message("Price must be positive and cannot be zero"), HttpStatus.BAD_REQUEST);
 
-        Product product = new Product(productDTO.getNameProduct(), productDTO.getRemarks(), productDTO.getPrice());
+        Product product = new Product(productDTO.getNameProduct(), productDTO.getBrand(), productDTO.getRemarks(), productDTO.getPrice(), productDTO.getQuantity());
 
         // Get the user from the UserDetails object
         //Usuario usuario = ((UsuarioPrincipal) userDetails).getUsuario();

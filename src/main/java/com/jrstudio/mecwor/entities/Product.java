@@ -7,6 +7,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "PRODUCTOS")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TIPO_PRODUCTO", discriminatorType = DiscriminatorType.STRING)
 //@JsonIgnoreProperties(ignoreUnknown = true)
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idProduct")
 public class Product {
@@ -15,8 +17,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduct;
 
-    private String nameProduct, remarks;
-    private double price;
+    private String nameProduct, brand, remarks;
+    private float price;
+    private long quantity;
 
     @JsonIgnore
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -26,10 +29,12 @@ public class Product {
     // CONSTRUCTORS
     public Product() {
     }
-    public Product(String nameProduct, String remarks, double price) {
+    public Product(String nameProduct, String brand, String remarks, float price, long quantity) {
         this.nameProduct = nameProduct;
+        this.brand = brand;
         this.remarks = (remarks != null) ? remarks : "---";
         this.price = price;
+        this.quantity = quantity;
     }
 
     // GETTERS
@@ -39,12 +44,19 @@ public class Product {
     public String getNameProduct() {
         return nameProduct;
     }
+    public String getBrand() {
+        return brand;
+    }
     public String getRemarks() {
         return remarks;
     }
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
+    public long getQuantity() {
+        return quantity;
+    }
+
     public List<Vehicle> getVehicles() {
         return vehicles;
     }
@@ -56,12 +68,19 @@ public class Product {
     public void setNameProduct(String nameProduct) {
         this.nameProduct = nameProduct;
     }
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
+    public void setQuantity(long quantity) {
+        this.quantity = quantity;
+    }
+
     public void setVehicles(List<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }
