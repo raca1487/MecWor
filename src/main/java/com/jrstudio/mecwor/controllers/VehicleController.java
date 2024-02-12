@@ -3,8 +3,10 @@ package com.jrstudio.mecwor.controllers;
 import com.jrstudio.mecwor.dto.Message;
 import com.jrstudio.mecwor.dto.VehicleDTO;
 import com.jrstudio.mecwor.entities.Customer;
+import com.jrstudio.mecwor.entities.Product;
 import com.jrstudio.mecwor.entities.Vehicle;
 import com.jrstudio.mecwor.services.CustomerService;
+import com.jrstudio.mecwor.services.ProductService;
 import com.jrstudio.mecwor.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,8 @@ import org.springframework.http.ResponseEntity;
 //import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +30,8 @@ public class VehicleController {
     VehicleService vehicleService;
     @Autowired
     CustomerService customerService;
+    @Autowired
+    ProductService productService;
 
     @GetMapping("/list")
     public ResponseEntity<List<Vehicle>> list() {
@@ -72,6 +78,34 @@ public class VehicleController {
         // Guardar el vehículo
         vehicleService.save(vehicle);
         return new ResponseEntity(new Message("Vehicle registered"), HttpStatus.OK);
+    }
+
+    @Transactional
+    @PatchMapping("/add-product/{idVehicle}/{idProduct}")
+    public ResponseEntity<?> addProductToVehicle(@PathVariable("idVehicle") long idVehicle, @PathVariable("idProduct") long idProduct) {
+        Optional<Vehicle> optionalVehicle = vehicleService.getOne(idVehicle);
+        if (optionalVehicle.isEmpty()) {
+            return new ResponseEntity<>(new Message("Vehicle not found"), HttpStatus.NOT_FOUND);
+        }
+
+        Vehicle vehicle = optionalVehicle.get();
+
+        // Inicializar la lista de productos si es nula
+        if (vehicle.getProducts() == null) {
+            vehicle.setProducts(new ArrayList<>());
+        }
+
+        Optional<Product> optionalProduct = productService.getOneById(idProduct);
+        if (optionalProduct.isEmpty()) {
+            return new ResponseEntity<>(new Message("Product not found"), HttpStatus.NOT_FOUND);
+        }
+
+        Product product = optionalProduct.get();
+
+        vehicle.addProduct(product);
+        vehicleService.save(vehicle);
+
+        return new ResponseEntity<>(new Message("Product added to vehicle"), HttpStatus.OK);
     }
 
     //@PreAuthorize("hasRole('ADMIN')")

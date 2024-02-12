@@ -30,7 +30,7 @@ public class Customer {
     public Customer(String name, String surname1, String surname2, String phone, String mail) {
         this.name = name;
         this.surname1 = surname1;
-        this.surname2 = (surname2 != null) ? surname2 : "";
+        this.surname2 = (surname2 != null) ? surname2 : "---";
         this.phone = phone;
         this.mail = mail;
     }

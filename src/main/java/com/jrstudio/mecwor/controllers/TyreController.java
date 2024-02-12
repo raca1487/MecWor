@@ -37,12 +37,12 @@ public class TyreController {
     //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody TyreDTO tyreDTO/*, @AuthenticationPrincipal UserDetails userDetails*/) {
-        if (tyreDTO.getDiameter() <= 0)
-            return new ResponseEntity(new Message("Size must be positive and cannot be zero"), HttpStatus.BAD_REQUEST);
-        if (tyreDTO.getQuantity() <= 0)
-            return new ResponseEntity(new Message("Quantity must be positive and cannot be zero"), HttpStatus.BAD_REQUEST);
+        /*if (tyreDTO.get() <= 0)
+            return new ResponseEntity(new Message("Size must be positive and cannot be zero"), HttpStatus.BAD_REQUEST);*/
+        if (tyreDTO.getQuantity() == 4 | tyreDTO.getQuantity() == 2)
+            return new ResponseEntity(new Message("Quantity must be two or four"), HttpStatus.BAD_REQUEST);
 
-        Tyre tyre = new Tyre(tyreDTO.getNameProduct(), tyreDTO.getBrand(), tyreDTO.getRemarks(), tyreDTO.getPrice(), tyreDTO.getQuantity(), tyreDTO.getSize(), tyreDTO.getDiameter(), tyreDTO.getLoadIndex());
+        Tyre tyre = new Tyre(tyreDTO.getNameProduct(), tyreDTO.getBrand(), tyreDTO.getRemarks(), tyreDTO.getPrice(), tyreDTO.getQuantity(), tyreDTO.getWidth(), tyreDTO.getSerie(), tyreDTO.getDiameter(), tyreDTO.getLoadIndex());
 
         // Get the user from the UserDetails object
         //Usuario usuario = ((UsuarioPrincipal) userDetails).getUsuario();

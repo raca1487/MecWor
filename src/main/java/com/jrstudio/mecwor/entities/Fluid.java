@@ -14,7 +14,7 @@ public class Fluid extends Product {
     }
     public Fluid(String nameProduct, String brand, String remarks, float price, long quantity, String viscosity, String quantityFluid) {
         super(nameProduct, brand, remarks, price, quantity);
-        this.viscosity = viscosity;
+        this.viscosity = (viscosity != null) ? viscosity: "-----";
         this.quantityFluid = quantityFluid;
     }
 

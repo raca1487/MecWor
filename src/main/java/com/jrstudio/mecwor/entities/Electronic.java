@@ -14,7 +14,7 @@ public class Electronic extends Product {
     }
     public Electronic(String nameProduct, String brand, String remarks, float price, long quantity, String powerSupply) {
         super(nameProduct, brand, remarks, price, quantity);
-        this.powerSupply = powerSupply;
+        this.powerSupply = (powerSupply != null) ? powerSupply: "-----";
     }
 
     // GETTERS

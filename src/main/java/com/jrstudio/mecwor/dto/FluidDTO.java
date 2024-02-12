@@ -10,9 +10,9 @@ public class FluidDTO extends ProductDTO {
     // CONSTRUCTORS
     public FluidDTO() {
     }
-    public FluidDTO(@NotBlank String nameProduct, @NotBlank String brand, String remarks, @NotBlank float price, @NotBlank long quantity, @NotBlank String viscosity, @NotBlank String quantityFluid) {
+    public FluidDTO(@NotBlank String nameProduct, @NotBlank String brand, String remarks, @NotBlank float price, @NotBlank long quantity, String viscosity, @NotBlank String quantityFluid) {
         super(nameProduct, brand, remarks, price, quantity);
-        this.viscosity = viscosity;
+        this.viscosity = (viscosity != null) ? viscosity: "-----";
         this.quantityFluid = quantityFluid;
     }
 

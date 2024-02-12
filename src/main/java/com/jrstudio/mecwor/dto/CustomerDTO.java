@@ -12,7 +12,7 @@ public class CustomerDTO {
     public CustomerDTO(@NotBlank String name, @NotBlank String surname1, @NotBlank String surname2, @NotBlank String phone, @NotBlank String mail) {
         this.name = name;
         this.surname1 = surname1;
-        this.surname2 = (surname2 != null) ? surname2 : "";
+        this.surname2 = (surname2 != null) ? surname2 : "---";
         this.phone = phone;
         this.mail = mail;
     }

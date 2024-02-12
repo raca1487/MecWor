@@ -15,7 +15,6 @@ public class ProductDTO {
     private String remarks;
     @NotBlank
     private float price;
-    @NotBlank
     private long quantity;
 
     @JsonIdentityReference(alwaysAsId = true)
@@ -24,7 +23,7 @@ public class ProductDTO {
     // CONSTRUCTORS
     public ProductDTO() {
     }
-    public ProductDTO(@NotBlank String nameProduct, @NotBlank String brand, String remarks, @NotBlank float price, @NotBlank long quantity) {
+    public ProductDTO(@NotBlank String nameProduct, @NotBlank String brand, String remarks, @NotBlank float price, long quantity) {
         this.nameProduct = nameProduct;
         this.brand = brand;
         this.remarks = (remarks != null) ? remarks : "---";

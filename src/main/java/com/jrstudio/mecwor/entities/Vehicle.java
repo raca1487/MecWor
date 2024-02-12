@@ -1,6 +1,11 @@
 package com.jrstudio.mecwor.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "VEHICULOS")
@@ -15,6 +20,10 @@ public class Vehicle {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CUSTOMER", referencedColumnName = "idCustomer", nullable = false)
     private Customer customer;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "vehicles")
+    private List<Product> products;
 
     // CONSTRUCTORS
     public Vehicle() {
@@ -42,6 +51,9 @@ public class Vehicle {
     public Customer getCustomer() {
         return customer;
     }
+    public List<Product> getProducts() {
+        return products;
+    }
 
     // SETTERS
     public void setIdentificationVehicle(String identificationVehicle) {
@@ -59,4 +71,13 @@ public class Vehicle {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public void addProduct(Product product) {
+        getProducts().add(product);
+        product.getVehicles().add(this);
+    }
+
 }

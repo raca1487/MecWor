@@ -1,7 +1,5 @@
 package com.jrstudio.mecwor.entities;
 
-import com.jrstudio.mecwor.enums.Type;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -16,9 +14,9 @@ public class Accessory extends Product {
     }
     public Accessory(String nameProduct, String brand, String remarks, float price, long quantity, String compatibilty, String size, String voltage) {
         super(nameProduct, brand, remarks, price, quantity);
-        this.compatibilty = compatibilty;
-        this.size = size;
-        this.voltage = voltage;
+        this.compatibilty = (compatibilty != null) ? compatibilty : "-----";
+        this.size = (size != null) ? size : "-----";
+        this.voltage = (voltage != null) ? voltage : "-----";
     }
 
     // GETTERS

@@ -35,8 +35,6 @@ public class ElectronicController {
     //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody ElectronicDTO electronicDTO/*, @AuthenticationPrincipal UserDetails userDetails*/) {
-        if (electronicDTO.getPowerSupply() == null)
-            return new ResponseEntity(new Message("Power Supply is mandatory"), HttpStatus.BAD_REQUEST);
 
         Electronic electronic = new Electronic(electronicDTO.getNameProduct(), electronicDTO.getBrand(), electronicDTO.getRemarks(), electronicDTO.getPrice(), electronicDTO.getQuantity(), electronicDTO.getPowerSupply());
 

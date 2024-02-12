@@ -3,30 +3,29 @@ package com.jrstudio.mecwor.dto;
 import javax.validation.constraints.NotBlank;
 
 public class TyreDTO extends ProductDTO {
-
     @NotBlank
-    private String brand, size, loadIndex;
+    private Long width, serie, diameter;
     @NotBlank
-    private Long diameter;
+    private String loadIndex;
 
     // CONSTRUCTORS
     public TyreDTO() {
         super();
     }
-    public TyreDTO(@NotBlank String nameProduct, @NotBlank String brand, String remarks, @NotBlank float price, @NotBlank long quantity, @NotBlank String size, @NotBlank Long diameter, @NotBlank String loadIndex) {
+    public TyreDTO(@NotBlank String nameProduct, @NotBlank String brand, String remarks, @NotBlank float price, @NotBlank long quantity, @NotBlank Long width, @NotBlank Long serie, @NotBlank Long diameter, @NotBlank String loadIndex) {
         super(nameProduct, brand, remarks, price, quantity);
-        this.brand = brand;
-        this.size = size;
+        this.width = width;
+        this.serie = serie;
         this.diameter = diameter;
         this.loadIndex = loadIndex;
     }
 
     // GETTERS
-    public String getBrand() {
-        return brand;
+    public Long getWidth() {
+        return width;
     }
-    public String getSize() {
-        return size;
+    public Long getSerie() {
+        return serie;
     }
     public Long getDiameter() {
         return diameter;
@@ -36,11 +35,11 @@ public class TyreDTO extends ProductDTO {
     }
 
     // SETTERS
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setWidth(Long width) {
+        this.width = width;
     }
-    public void setSize(String size) {
-        this.size = size;
+    public void setSerie(Long serie) {
+        this.serie = serie;
     }
     public void setDiameter(Long diameter) {
         this.diameter = diameter;

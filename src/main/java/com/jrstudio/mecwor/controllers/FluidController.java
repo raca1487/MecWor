@@ -35,8 +35,6 @@ public class FluidController {
     //@PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody FluidDTO fluidDTO/*, @AuthenticationPrincipal UserDetails userDetails*/) {
-        if (fluidDTO.getViscosity() == null)
-            return new ResponseEntity(new Message("Viscosity is mandatory"), HttpStatus.BAD_REQUEST);
         if (fluidDTO.getQuantityFluid() == null)
             return new ResponseEntity(new Message("Fluid Quantity is mandatory"), HttpStatus.BAD_REQUEST);
 

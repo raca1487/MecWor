@@ -1,7 +1,6 @@
 package com.jrstudio.mecwor.controllers;
 
 import com.jrstudio.mecwor.dto.Message;
-import com.jrstudio.mecwor.dto.ProductDTO;
 import com.jrstudio.mecwor.entities.Product;
 import com.jrstudio.mecwor.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +33,8 @@ public class ProductController {
     }
 
     //@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody ProductDTO productDTO/*, @AuthenticationPrincipal UserDetails userDetails*/) {
+    /*@PostMapping("/create")
+    public ResponseEntity<?> create(@RequestBody ProductDTO productDTO*//*, @AuthenticationPrincipal UserDetails userDetails*//*) {
         if (productDTO.getNameProduct() == null)
             return new ResponseEntity(new Message("Name is mandatory"), HttpStatus.BAD_REQUEST);
         if (productDTO.getBrand() == null)
@@ -51,7 +50,7 @@ public class ProductController {
 
         productService.save(product);
         return new ResponseEntity(new Message("Product created"), HttpStatus.OK);
-    }
+    }*/
 
     //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")

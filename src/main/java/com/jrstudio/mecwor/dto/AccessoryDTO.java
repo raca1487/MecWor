@@ -11,9 +11,9 @@ public class AccessoryDTO extends ProductDTO {
     }
     public AccessoryDTO(@NotBlank String nameProduct, @NotBlank String brand, String remarks, @NotBlank float price, @NotBlank long quantity, String compatibilty, String size, String voltage) {
         super(nameProduct, brand, remarks, price, quantity);
-        this.compatibilty = compatibilty;
-        this.size = size;
-        this.voltage = voltage;
+        this.compatibilty = (compatibilty != null) ? compatibilty : "-----";
+        this.size = (size != null) ? size : "-----";
+        this.voltage = (voltage != null) ? voltage : "-----";
     }
     // GETTERS
     public String getCompatibilty() {
