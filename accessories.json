@@ -1,0 +1,38 @@
+[
+  {
+    "nameProduct": "Bombilla",
+    "brand": "Philips",
+    "price": 5,
+    "compatibilty": "Halogena"
+  },
+  {
+    "nameProduct": "Bombilla",
+    "brand": "Philips",
+    "price": 10,
+    "compatibilty": "Led"
+  },
+  {
+    "nameProduct": "Bombilla",
+    "brand": "Philips",
+    "price": 25,
+    "compatibilty": "Xenon"
+  },
+  {
+    "nameProduct": "Limpiaparabrisas",
+    "brand": "Bosch",
+    "price": 17,
+    "compatibilty": "Delantero piloto"
+  },
+  {
+    "nameProduct": "Limpiaparabrisas",
+    "brand": "Bosch",
+    "price": 15,
+    "compatibilty": "Delantero co-piloto"
+  },
+  {
+    "nameProduct": "Limpiaparabrisas",
+    "brand": "Bosch",
+    "price": 12,
+    "compatibilty": "Trasero"
+  }
+]

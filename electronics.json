@@ -1,0 +1,48 @@
+[
+    {
+        "nameProduct": "Bateria",
+        "brand": "Bosch",
+        "price": 105,
+        "powerSupply": "74Ah / 12V"
+    },
+    {
+        "nameProduct": "Bateria",
+        "brand": "Tudor",
+        "price": 83,
+        "powerSupply": "70Ah / 12V"
+    },
+    {
+        "nameProduct": "Bateria",
+        "brand": "Varta",
+        "price": 123,
+        "powerSupply": "95Ah / 12V"
+    },
+    {
+        "nameProduct": "Motor de arranque",
+        "brand": "Bosch",
+        "price": 235,
+        "powerSupply": "107 kW / 12V"
+    },
+    {
+        "nameProduct": "Alternador",
+        "brand": "Bosch",
+        "price": 300
+    },
+    {
+        "nameProduct": "Interruptor de encendido",
+        "brand": "Bosch",
+        "price": 50
+    },
+    {
+        "nameProduct": "Fusible",
+        "brand": "Bosch",
+        "price": 2,
+        "powerSupply": "12V"
+    },
+    {
+        "nameProduct": "Rele",
+        "brand": "Bosch",
+        "price": 12,
+        "powerSupply": "40A / 12V"
+    }
+]

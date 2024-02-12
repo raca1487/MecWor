@@ -1,0 +1,38 @@
+[
+  {
+    "nameProduct": "Conti-EcoContact 5",
+    "brand": "Continental",
+    "price": 101.54,
+    "width": 205,
+    "serie": 55,
+    "diameter": 16,
+    "loadIndex": "94H"
+  },
+  {
+    "nameProduct": "EcoContact 6",
+    "brand": "Continental",
+    "price": 96.62,
+    "width": 195,
+    "serie": 65,
+    "diameter": 15,
+    "loadIndex": "95H"
+  },
+  {
+    "nameProduct": "Premium Contact 7",
+    "brand": "Continental",
+    "price": 99.43,
+    "width": 225,
+    "serie": 45,
+    "diameter": 17,
+    "loadIndex": "94V"
+  },
+  {
+    "nameProduct": "Conti-EcoContact 3",
+    "brand": "Continental",
+    "price": 76.44,
+    "width": 175,
+    "serie": 65,
+    "diameter": 14,
+    "loadIndex": "86T"
+  }
+]

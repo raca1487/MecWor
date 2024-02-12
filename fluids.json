@@ -1,0 +1,111 @@
+[
+    {
+        "nameProduct": "Aceite para motor",
+        "brand": "Castrol",
+        "price": 7,
+        "viscosity": "5W-30",
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Aceite para motor",
+        "brand": "Elf",
+        "price": 6.8,
+        "viscosity": "5W-40",
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Aceite para motor",
+        "brand": "Total",
+        "price": 8,
+        "viscosity": "10W-30",
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Aceite para motor",
+        "brand": "Castrol",
+        "price": 35,
+        "viscosity": "5W-40",
+        "quantityFluid": "5L"
+    },
+    {
+        "nameProduct": "Aceite para motor",
+        "brand": "Elf",
+        "price": 34,
+        "viscosity": "5W-30",
+        "quantityFluid": "5L"
+    },
+    {
+        "nameProduct": "Aceite para motor",
+        "brand": "Total",
+        "price": 40,
+        "viscosity": "10W-30",
+        "quantityFluid": "5L"
+    },
+    {
+        "nameProduct": "Liquido Limpiaparabrisas",
+        "brand": "Motul",
+        "price": 12.50,
+        "quantityFluid": "3L"
+    },
+    {
+        "nameProduct": "Aceite para cambio de marchas",
+        "brand": "Motul",
+        "price": 22,
+        "viscosity": "10W-40",
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Aceite para cambio de marchas",
+        "brand": "Elf",
+        "price": 26,
+        "viscosity": "75W-90",
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Aceite para cambio de marchas",
+        "brand": "Motul",
+        "price": 11,
+        "viscosity": "10W-40",
+        "quantityFluid": "0.5L"
+    },
+    {
+        "nameProduct": "Aceite para cambio de marchas",
+        "brand": "Elf",
+        "price": 13,
+        "viscosity": "75W-90",
+        "quantityFluid": "0.5L"
+    },
+    {
+        "nameProduct": "Aceite hidraulico",
+        "brand": "Krafft",
+        "price": 17,
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Liquido de frenos",
+        "brand": "Castrol",
+        "price": 16,
+        "viscosity": "DOT3",
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Liquido de frenos",
+        "brand": "Motul",
+        "price": 14,
+        "viscosity": "DOT3",
+        "quantityFluid": "1L"
+    },
+    {
+        "nameProduct": "Liquido de frenos",
+        "brand": "Castrol",
+        "price": 8,
+        "viscosity": "DOT3",
+        "quantityFluid": "0.5L"
+    },{
+        "nameProduct": "Liquido de frenos",
+        "brand": "Motul",
+        "price": 7,
+        "viscosity": "DOT3",
+        "quantityFluid": "0.5L"
+    }
+]
